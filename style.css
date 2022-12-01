@@ -9,12 +9,20 @@
     padding: 20px 0;
 }
 
+body {
+    background-image: url(./assets/wallpaper/wallpaper-jackpot.jpg);
+    background-position: center;
+    background-size: cover;
+}
+
 main {
     max-width: 960px;
     display: flex;
     margin: 40px auto;
     padding: 30px;
     gap: 10px;
+    background-color: rgba(255, 255, 255, 1);
+    border-radius: 10px;
 } 
 
 .game-section {
