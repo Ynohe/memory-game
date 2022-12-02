@@ -85,7 +85,7 @@ main {
 
 /* user login */
 
-.card {
+.card-username {
     width: 210px;
     height: 254px;
     text-align: center;
@@ -98,15 +98,15 @@ main {
     border-radius: 20px;
 }
 
-.card > * {
+.card-username > * {
 margin: 0;
 }
 
-.card__title {
+.card-username {
     color: #333;
 }
 
-.card__content {
+.card-username {
 font-size: 13px;
 line-height: 18px;
 color: #333;
