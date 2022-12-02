@@ -2,8 +2,11 @@ const modal = document.getElementById("modal");
 const gameSection = document.getElementById("gameSection");
 const scoreDiv = document.getElementById("scoresDiv");
 const userForm = document.getElementById("userForm");
+let ids = 0;
 
-const scores = [];
+const localStoreData = localStorage.getItem("userScores");
+
+const scoresArr = [];
 
 class Scores {
     constructor(id, user, time) {
@@ -17,8 +20,6 @@ window.onload = (event) => {
     modal.showModal();
 };
 
-let ids = 0;
-
 userForm.addEventListener("submit", takeUsername);
 
 function takeUsername(event) {
@@ -26,17 +27,17 @@ function takeUsername(event) {
     let username = document.getElementById("username");
 
     const player = new Scores(ids, username.value, 0);
-    scores.push(player);
+    scoresArr.push(player);
+
+    localStorage.setItem("userScores", JSON.stringify(scoresArr));
 
     showPlayer();
-
-    console.log(username)
 }
 
 function showPlayer() {
     scoreDiv.innerHTML = "";
 
-    scores.forEach(element => {
+    scoresArr.forEach(element => {
         scoreDiv.innerHTML += `
         <div class="users-score">
             <h4>${element.user}</h4>
