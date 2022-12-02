@@ -4,7 +4,13 @@ const scoreDiv = document.getElementById("scoresDiv");
 const userForm = document.getElementById("userForm");
 let ids = 0;
 
-const localStoreData = JSON.parse(localStorage.getItem("userScores"));
+let localStoreData = [];
+
+if(localStorage.getItem("userScores")) {
+    localStoreData = JSON.parse(localStorage.getItem("userScores"));
+  } else {
+    localStorage.setItem("userScores", JSON.stringify(localStoreData));
+  };
 
 const scoresArr = [...localStoreData];
 
@@ -27,7 +33,7 @@ function takeUsername(event) {
     let username = document.getElementById("username");
 
     const player = new Scores(ids, username.value, 0);
-    scoresArr.push(player);
+    scoresArr.unshift(player);
 
     localStorage.setItem("userScores", JSON.stringify(scoresArr));
 
@@ -37,13 +43,25 @@ function takeUsername(event) {
 function showPlayer() {
     scoreDiv.innerHTML = "";
 
-    scoresArr.forEach(element => {
-        scoreDiv.innerHTML += `
-        <div class="users-score">
-            <h4>${element.user}</h4>
-            <p>Score</p>
-        </div>
-        `
+    scoresArr.forEach((element, index) => {
+
+        if(index == 0) {
+            scoreDiv.innerHTML += `
+                <div class="users-score">
+                    <h4>${element.user}</h4>
+                    <p>Now playing</p>
+                </div>
+                `
+        }
+
+        if(index > 0) {
+            scoreDiv.innerHTML += `
+            <div class="users-score">
+                <h4>${element.user}</h4>
+                <p>Score</p>
+            </div>
+            `
+        }
     });
 };
 
