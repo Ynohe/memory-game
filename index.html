@@ -5,6 +5,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="style.css">
+    <script defer src="./user.js"></script>
     <title>Memory Game</title>
 </head>
 <body>
@@ -12,7 +13,7 @@
         <h2>Memory Game</h2>
     </header>
     <main>
-        <section class="game-section">
+        <section class="game-section" id="gameSection">
             <div class="image-div">
                 <img src="./assets/images/Banana.png" alt="Banana">
             </div>
@@ -61,16 +62,25 @@
             <div class="image-div">
                 <img src="./assets/images/Seven.png" alt="">
             </div>
+
+            <dialog id="modal" class="modal">
+                <form id="userForm" class="card-username" method="dialog">
+                    <h1 class="card__title">User</h1>
+                    <p class="card__content">Please enter your username</p>
+                    <div class="card__form">
+                        <input id="username" type="text" placeholder="Your username">
+                        <button class="sign-up" type="submit"> Sign up</button>
+                    </div>
+                </form>
+            </dialog>
         </section>
-        <aside class="score-section">
-            <h3>Casinomasters</h3>
-            <div>
-                <p>Ynohe</p>
-                <p id="pointsActualUser"></p>
-            </div>
-            <div>
-                <p>Name</p>
-                <p>score</p>
+        <aside class="score-section" id="scoreSection">
+            <h3>User scores</h3>
+            <div id="scoresDiv" class="scores-div">
+                <div class="users-score">
+                    <h4>Player</h4>
+                    <p>Now Playing</p>
+                </div>
             </div>
         </aside>
     </main>
