@@ -5,7 +5,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="style.css">
-    <script src="./clickgame.js"></script>
+    <script defer src="./user.js"></script>
     <title>Memory Game</title>
 </head>
 <body>
@@ -13,70 +13,112 @@
         <h2>Memory Game</h2>
     </header>
     <main>
-        <section class="game-section">
+        <section class="game-section" id="game-section">
+
             <div class="image-div card">
-                <img src="./assets/images/Banana.png" alt="Banana">
+                <img class="front-image" src="./assets/images/Banana.png" alt="Banana">
+                <img class="back-image" src="./assets/images/chip.png" alt="back-card">        
             </div>
+
             <div class="image-div card">
-                <img src="./assets/images/Bar.png" alt="">
+                <img class="front-image" src="./assets/images/Bar.png" alt="">
+                <img class="back-image" src="./assets/images/chip.png" alt="back-card">
             </div>
+            
             <div class="image-div card">
-                <img src="./assets/images/Cherry.png" alt="">
+                <img class="front-image" src="./assets/images/Cherry.png" alt="">
+                <img class="back-image" src="./assets/images/chip.png" alt="back-card">
             </div>
+
             <div class="image-div card">
-                <img src="./assets/images/Club.png" alt="">
+                <img class="front-image" src="./assets/images/Club.png" alt="">
+                <img class="back-image" src="./assets/images/chip.png" alt="back-card">
             </div>
+
             <div class="image-div card">
-                <img src="./assets/images/Coins.png" alt="">
+                <img class="front-image" src="./assets/images/Coins.png" alt="">
+                <img class="back-image" src="./assets/images/chip.png" alt="back-card">
             </div>
+
             <div class="image-div card">
-                <img src="./assets/images/Diamond.png" alt="">
+                <img class="front-image" src="./assets/images/Diamond.png" alt="">
+                <img class="back-image" src="./assets/images/chip.png" alt="back-card">
             </div>
+
             <div class="image-div card">
-                <img src="./assets/images/Horseshoe.png" alt="">
+                <img class="front-image" src="./assets/images/Horseshoe.png" alt="">
+                <img class="back-image" src="./assets/images/chip.png" alt="back-card">
             </div>
+
             <div class="image-div card">
-                <img src="./assets/images/Seven.png" alt="">
+                <img class="front-image" src="./assets/images/Seven.png" alt="">
+                <img class="back-image" src="./assets/images/chip.png" alt="back-card">
             </div>
+
             <div class="image-div card">
-                <img src="./assets/images/Banana.png" alt="Banana">
+                <img class="front-image" src="./assets/images/Banana.png" alt="Banana">
+                <img class="back-image" src="./assets/images/chip.png" alt="back-card">
             </div>
+
             <div class="image-div card">
-                <img src="./assets/images/Bar.png" alt="">
+                <img class="front-image" src="./assets/images/Bar.png" alt="">
+                <img class="back-image" src="./assets/images/chip.png" alt="back-card">
             </div>
+
             <div class="image-div card">
-                <img src="./assets/images/Cherry.png" alt="">
+                <img class="front-image" src="./assets/images/Cherry.png" alt="">
+                <img class="back-image"src="./assets/images/chip.png" alt="back-card">  
             </div>
+
             <div class="image-div card">
-                <img src="./assets/images/Club.png" alt="">
+                <img class="front-image" src="./assets/images/Club.png" alt="">
+                <img class="back-image" src="./assets/images/chip.png" alt="back-card">
             </div>
+            
             <div class="image-div card">
-                <img src="./assets/images/Coins.png" alt="">
+                <img class="front-image" src="./assets/images/Coins.png" alt="">
+                <img class="back-image" src="./assets/images/chip.png" alt="back-card">
             </div>
+            
             <div class="image-div card">
-                <img src="./assets/images/Diamond.png" alt="">
+                <img class="front-image" src="./assets/images/Diamond.png" alt="">
+                <img class="back-image" src="./assets/images/chip.png" alt="back-card">
             </div>
+
             <div class="image-div card">
-                <img src="./assets/images/Horseshoe.png" alt="">
+                <img class="front-image" src="./assets/images/Horseshoe.png" alt="">
+                <img class="back-image" src="./assets/images/chip.png" alt="back-card">
             </div>
+
             <div class="image-div card">
-                <img src="./assets/images/Seven.png" alt="">
+                <img class="front-image" src="./assets/images/Seven.png" alt="">
+                <img class="back-image" src="./assets/images/chip.png" alt="back-card">
             </div>
+
+            <dialog id="modal" class="modal">
+                <form id="userForm" class="card-username" method="dialog">
+                    <h1 class="card__title">User</h1>
+                    <p class="card__content">Please enter your username</p>
+                    <div class="card__form">
+                        <input id="username" type="text" placeholder="Your username">
+                        <button class="sign-up" type="submit"> Sign up</button>
+                    </div>
+                </form>
+            </dialog>
         </section>
-        <aside class="score-section">
+        <aside class="score-section" id="scoreSection">
             <h3>User scores</h3>
-            <div>
-                <h4>Playing</h4>
-                <p>score</p>
-            </div>
-            <div>
-                <h4>Name</h4>
-                <p>score</p>
+            <div id="scoresDiv" class="scores-div">
+                <div class="users-score">
+                    <h4>Player</h4>
+                    <p>Now Playing</p>
+                </div>
             </div>
         </aside>
     </main>
     <footer>
 
     </footer>
+    
 </body>
 </html>
