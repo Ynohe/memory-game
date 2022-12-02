@@ -37,17 +37,49 @@ main {
     background-size: cover;
 }
 
+.card{
+    cursor: pointer;
+}
 .image-div {
     padding: 20px 0;
     border-left: 2px solid black;
     border-right: 2px solid black;
     background-color: rgb(238, 225, 201);
+    position:relative;
+    width:120px;
+    height: 120px;
+    
 }
 
-.image-div img {
-    display: block;
-    margin: auto;
+.back-image {
+    transform: rotateY(0.5turn);
+
 }
+
+.card:hover .front-image{
+    transform: rotateY(0.5turn);
+}
+
+
+.card:hover .back-image{
+    transform: rotateY(1turn);
+}
+
+
+.front-image, .back-image {
+    top: 0;
+    left: 0;
+    bottom: 0;
+    right: 0;
+    padding: 10px;
+    transform-style: preserve-3d;
+    backface-visibility: hidden;
+    position: absolute;
+    transition: all 2s;
+    width:100%;
+
+}
+
 
 
 .image-div:nth-of-type(1), .image-div:nth-of-type(2), .image-div:nth-of-type(3), .image-div:nth-of-type(4) {
