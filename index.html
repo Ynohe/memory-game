@@ -6,6 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="style.css">
     <script defer src="./user.js"></script>
+    <script defer src="./clickforfun.js"></script>
     <title>Memory Game</title>
 </head>
 <body>
@@ -15,84 +16,84 @@
     <main>
         <section class="game-section" id="game-section">
 
-            <div class="image-div card">
-                <img class="front-image" src="./assets/images/Banana.png" alt="Banana">
-                <img class="back-image" src="./assets/images/chip.png" alt="back-card">        
+            <div class="image-div card" data-framework="banana">
+                <img class="card-face front-image" src="./assets/images/Banana.png" alt="Banana">
+                <img class="card-face back-image flip-back" src="./assets/images/chip.png" alt="back-card">        
             </div>
 
-            <div class="image-div card">
-                <img class="front-image" src="./assets/images/Bar.png" alt="">
-                <img class="back-image" src="./assets/images/chip.png" alt="back-card">
+            <div class="image-div card" data-framework="bar">
+                <img class="card-face front-image" src="./assets/images/Bar.png" alt="">
+                <img class="card-face back-image flip-back" src="./assets/images/chip.png" alt="back-card">
             </div>
             
-            <div class="image-div card">
-                <img class="front-image" src="./assets/images/Cherry.png" alt="">
-                <img class="back-image" src="./assets/images/chip.png" alt="back-card">
+            <div class="image-div card"data-framework="cherry">
+                <img class="card-face front-image" src="./assets/images/Cherry.png" alt="">
+                <img class="card-face back-image flip-back" src="./assets/images/chip.png" alt="back-card">
             </div>
 
-            <div class="image-div card">
-                <img class="front-image" src="./assets/images/Club.png" alt="">
-                <img class="back-image" src="./assets/images/chip.png" alt="back-card">
+            <div class="image-div card" data-framework="club">
+                <img class="card-face front-image" src="./assets/images/Club.png" alt="">
+                <img class="card-face back-image flip-back" src="./assets/images/chip.png" alt="back-card">
             </div>
 
-            <div class="image-div card">
-                <img class="front-image" src="./assets/images/Coins.png" alt="">
-                <img class="back-image" src="./assets/images/chip.png" alt="back-card">
+            <div class="image-div card" data-framework="coins">
+                <img class="card-face front-image" src="./assets/images/Coins.png" alt="">
+                <img class="card-face back-image flip-back" src="./assets/images/chip.png" alt="back-card">
             </div>
 
-            <div class="image-div card">
-                <img class="front-image" src="./assets/images/Diamond.png" alt="">
-                <img class="back-image" src="./assets/images/chip.png" alt="back-card">
+            <div class="image-div card" data-framework="diamond">
+                <img class="card-face front-image" src="./assets/images/Diamond.png" alt="">
+                <img class="card-face back-image flip-back" src="./assets/images/chip.png" alt="back-card">
             </div>
 
-            <div class="image-div card">
-                <img class="front-image" src="./assets/images/Horseshoe.png" alt="">
-                <img class="back-image" src="./assets/images/chip.png" alt="back-card">
+            <div class="image-div card" data-framework="horseshoe">
+                <img class="card-face front-image" src="./assets/images/Horseshoe.png" alt="">
+                <img class="card-face back-image flip-back" src="./assets/images/chip.png" alt="back-card">
             </div>
 
-            <div class="image-div card">
-                <img class="front-image" src="./assets/images/Seven.png" alt="">
-                <img class="back-image" src="./assets/images/chip.png" alt="back-card">
+            <div class="image-div card" data-framework="seven">
+                <img class="card-face front-image" src="./assets/images/Seven.png" alt="">
+                <img class="card-face back-image flip-back" src="./assets/images/chip.png" alt="back-card">
             </div>
 
-            <div class="image-div card">
-                <img class="front-image" src="./assets/images/Banana.png" alt="Banana">
-                <img class="back-image" src="./assets/images/chip.png" alt="back-card">
+            <div class="image-div card" data-framework="banana">
+                <img class="card-face front-image" src="./assets/images/Banana.png" alt="Banana">
+                <img class="card-face back-image flip-back" src="./assets/images/chip.png" alt="back-card">
             </div>
 
-            <div class="image-div card">
-                <img class="front-image" src="./assets/images/Bar.png" alt="">
-                <img class="back-image" src="./assets/images/chip.png" alt="back-card">
+            <div class="image-div card" data-framework="bar">
+                <img class="card-face front-image" src="./assets/images/Bar.png" alt="">
+                <img class="card-face back-image flip-back" src="./assets/images/chip.png" alt="back-card">
             </div>
 
-            <div class="image-div card">
-                <img class="front-image" src="./assets/images/Cherry.png" alt="">
-                <img class="back-image"src="./assets/images/chip.png" alt="back-card">  
+            <div class="image-div card" data-framework="cherry">
+                <img class="card-face front-image" src="./assets/images/Cherry.png" alt="">
+                <img class="card-face back-image flip-back"src="./assets/images/chip.png" alt="back-card">  
             </div>
 
-            <div class="image-div card">
-                <img class="front-image" src="./assets/images/Club.png" alt="">
-                <img class="back-image" src="./assets/images/chip.png" alt="back-card">
+            <div class="image-div card" data-framework="club">
+                <img class="card-face front-image" src="./assets/images/Club.png" alt="">
+                <img class="card-face back-image flip-back" src="./assets/images/chip.png" alt="back-card">
             </div>
             
-            <div class="image-div card">
-                <img class="front-image" src="./assets/images/Coins.png" alt="">
-                <img class="back-image" src="./assets/images/chip.png" alt="back-card">
+            <div class="image-div card" data-framework="coins">
+                <img class="card-face front-image" src="./assets/images/Coins.png" alt="">
+                <img class="card-face back-image flip-back" src="./assets/images/chip.png" alt="back-card">
             </div>
             
-            <div class="image-div card">
-                <img class="front-image" src="./assets/images/Diamond.png" alt="">
-                <img class="back-image" src="./assets/images/chip.png" alt="back-card">
+            <div class="image-div card" data-framework="diamond">
+                <img class="card-face front-image" src="./assets/images/Diamond.png" alt="">
+                <img class="card-face back-image flip-back" src="./assets/images/chip.png" alt="back-card">
             </div>
 
-            <div class="image-div card">
-                <img class="front-image" src="./assets/images/Horseshoe.png" alt="">
-                <img class="back-image" src="./assets/images/chip.png" alt="back-card">
+            <div class="image-div card" data-framework="horseshoe">
+                <img class="card-face front-image" src="./assets/images/Horseshoe.png" alt="">
+                <img class="card-face back-image flip-back" src="./assets/images/chip.png" alt="back-card">
             </div>
 
-            <div class="image-div card">
-                <img class="front-image" src="./assets/images/Seven.png" alt="">
-                <img class="back-image" src="./assets/images/chip.png" alt="back-card">
+            <div class="image-div card" data-framework="seven">
+                <img class="card-face front-image" src="./assets/images/Seven.png" alt="">
+                <img class="card-face back-image flip-back" src="./assets/images/chip.png" alt="back-card">
             </div>
 
             <dialog id="modal" class="modal">
@@ -104,6 +105,10 @@
                         <button class="sign-up" type="submit"> Sign up</button>
                     </div>
                 </form>
+            </dialog>
+            <dialog id="winwin">
+                <h2>You are a winner!</h2>
+                <img src="./assets/images/champion.png" alt="">
             </dialog>
         </section>
         <aside class="score-section" id="scoreSection">
