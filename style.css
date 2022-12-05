@@ -252,13 +252,11 @@ to {
 
 .front-image {
     transform: rotateY(180deg);
-    animation: start-front 3s;
+
 
 }
 
-.back-image{
-    animation: start-back 3s;
-}
+
 
 .front-image, .back-image {
     top: 0;
