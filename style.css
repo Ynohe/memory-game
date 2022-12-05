@@ -223,9 +223,22 @@ to {
     background-size: cover;
 }
 
+.flip >img.back-image{
+    transform: rotateY(180deg);
+    transition: transform .5s;
+}
+
+.flip >img.front-image{
+    transform: rotateY(360deg);
+    transition: transform .5s;
+} 
+
 .card{
     cursor: pointer;
-}
+} 
+
+
+
 .image-div {
     padding: 20px 0;
     border-left: 2px solid black;
@@ -234,33 +247,18 @@ to {
     position:relative;
     width:120px;
     height: 120px;
-    
-}
 
+}
 
 .front-image {
-    transform: rotateY(0.5turn);
-    /*
+    transform: rotateY(180deg);
     animation: start-front 3s;
-    */
 
 }
 
-/*
-.back-image {
+.back-image{
     animation: start-back 3s;
 }
-*/
-
-.card:hover .back-image{
-    transform: rotateY(0.5turn);
-}
-
-
-.card:hover .front-image{
-    transform: rotateY(1turn);
-}
-
 
 .front-image, .back-image {
     top: 0;
@@ -271,7 +269,6 @@ to {
     transform-style: preserve-3d;
     backface-visibility: hidden;
     position: absolute;
-    transition: all 2s;
     width:100%;
 
 }
@@ -430,4 +427,20 @@ color: #333;
 
 .modal::backdrop {
     background: rgba(0, 0, 0, 0.6);
+}
+
+#winwin{
+    margin: auto;
+    width: 250px;
+    border-radius: 15px;
+    border: none;
+    padding: 11px;
+    text-align: center;
+}
+
+#winwin::backdrop{
+    background: rgba(0, 0, 0, 0.6);
+}
+#winwin img{
+    width: 100%;
 }
