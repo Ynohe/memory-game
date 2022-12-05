@@ -51,17 +51,22 @@ main {
     
 }
 
-.back-image {
+.front-image {
     transform: rotateY(0.5turn);
+    animation: start-front 3s;
 
 }
 
-.card:hover .front-image{
-    transform: rotateY(0.5turn);
+.back-image{
+    animation: start-back 3s;
 }
-
 
 .card:hover .back-image{
+    transform: rotateY(0.5turn);
+}
+
+
+.card:hover .front-image{
     transform: rotateY(1turn);
 }
 
@@ -80,6 +85,23 @@ main {
 
 }
 
+@keyframes start-front {
+    20%,90%{
+        transform: rotateY(1turn);
+    }
+    0%,100%{
+        transform: rotateY(0.5turn);
+    }
+}
+
+@keyframes start-back {
+    20%,90%{
+        transform: rotateY(0.5turn);
+    }
+    0%,100%{
+        transform: rotateY(1turn);
+    }
+}
 
 
 .image-div:nth-of-type(1), .image-div:nth-of-type(2), .image-div:nth-of-type(3), .image-div:nth-of-type(4) {
