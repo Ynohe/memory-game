@@ -2,6 +2,7 @@ const modal = document.getElementById("modal");
 const gameSection = document.getElementById("gameSection");
 const scoreDiv = document.getElementById("scoresDiv");
 const userForm = document.getElementById("userForm");
+const playButton = document.getElementById("playButton");
 let ids = 0;
 
 let localStoreData = [];
@@ -22,7 +23,9 @@ class Scores {
     };
 };
 
-window.onload = (event) => {
+playButton.addEventListener("click", startGame);
+
+function startGame() {
     modal.showModal();
 };
 
