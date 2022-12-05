@@ -9,11 +9,25 @@ let localStoreData = [];
 
 if(localStorage.getItem("userScores")) {
     localStoreData = JSON.parse(localStorage.getItem("userScores"));
-  } else {
-    localStorage.setItem("userScores", JSON.stringify(localStoreData));
-  };
+} else {
+localStorage.setItem("userScores", JSON.stringify(localStoreData));
+};
 
 const scoresArr = [...localStoreData];
+
+function showScores() {
+    scoresArr.forEach(item => {
+        scoreDiv.innerHTML += `
+                    <div class="users-score">
+                        <h4>${item.user}</h4>
+                        <p>Time: ${item.time}</p>
+                    </div>
+                    `
+    })
+}
+
+showScores();
+
 
 class Scores {
     constructor(id, user, time) {
@@ -61,7 +75,7 @@ function showPlayer() {
             scoreDiv.innerHTML += `
             <div class="users-score">
                 <h4>${element.user}</h4>
-                <p>Score</p>
+                <p>Time: ${element.time}</p>
             </div>
             `
         }
