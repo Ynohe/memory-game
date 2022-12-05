@@ -51,15 +51,20 @@ main {
     
 }
 
+
 .front-image {
     transform: rotateY(0.5turn);
+    /*
     animation: start-front 3s;
+    */
 
 }
 
-.back-image{
+/*
+.back-image {
     animation: start-back 3s;
 }
+*/
 
 .card:hover .back-image{
     transform: rotateY(0.5turn);
