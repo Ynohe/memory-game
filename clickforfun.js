@@ -4,6 +4,9 @@ let lockBoard = false;
 let firstCard, secondCard;
 let finish = 0;
 let winwin = document.getElementById("winwin");
+const playAgainButton = document.getElementById("winButton");
+
+console.log(playAgainButton);
 
 function flipCard(){
     if (lockBoard) return;
@@ -33,9 +36,13 @@ function disableCards(){
     finish++
     console.log(finish);
     if (finish === 8){  
-        winwin.showModal()
-
         finishTime();
+        winwin.showModal()
+        winwin.innerHTML += `
+            <p>Your time is ${x} seconds</p>
+        `
+        scoresArr[0].time = x;
+        localStorage.setItem("userScores", JSON.stringify(scoresArr))
     }
 }
 
@@ -49,5 +56,8 @@ function unflipCards(){
 }
 
 card.forEach(cards => cards.addEventListener("click", flipCard));
+
+
+playAgainButton.addEventListener("click", () => console.log("hola"));
 
 

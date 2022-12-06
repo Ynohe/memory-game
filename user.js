@@ -40,6 +40,7 @@ class Scores {
 playButton.addEventListener("click", startGame);
 
 function startGame() {
+    winwin.close();
     modal.showModal();
 };
 
@@ -60,13 +61,12 @@ function takeUsername(event) {
 };
 
 let timer;
-let milisecondsSpend;
-let timeSpendPlaying;
+let milisecondsSpend = 0;
+let timeSpendPlaying = 0;
+let x;
 
 function timeCount() { 
     const counterMiliseconds = 1;
-    let milisecondsSpend = 0;
-    let timeSpendPlaying = 0;
     timer = setInterval(() => {
         milisecondsSpend += 1;
         if (milisecondsSpend === 1000) {
