@@ -7,10 +7,10 @@ let ids = 0;
 
 let localStoreData = [];
 
-if(localStorage.getItem("userScores")) {
+if (localStorage.getItem("userScores")) {
     localStoreData = JSON.parse(localStorage.getItem("userScores"));
 } else {
-localStorage.setItem("userScores", JSON.stringify(localStoreData));
+    localStorage.setItem("userScores", JSON.stringify(localStoreData));
 };
 
 const scoresArr = [...localStoreData];
@@ -55,14 +55,40 @@ function takeUsername(event) {
     localStorage.setItem("userScores", JSON.stringify(scoresArr));
 
     showPlayer();
+
+    timeCount();
 };
+
+let timer;
+let milisecondsSpend;
+let timeSpendPlaying;
+
+function timeCount() { 
+    const counterMiliseconds = 1;
+    let milisecondsSpend = 0;
+    let timeSpendPlaying = 0;
+    timer = setInterval(() => {
+        milisecondsSpend += 1;
+        if (milisecondsSpend === 1000) {
+            milisecondsSpend = 0;
+            timeSpendPlaying += 1;
+        }
+        console.log(timeSpendPlaying + ',' + milisecondsSpend)
+    }, counterMiliseconds)
+}
+
+function finishTime(){
+        clearInterval(timer);
+
+        x = timeSpendPlaying + ',' + milisecondsSpend;
+}
 
 function showPlayer() {
     scoreDiv.innerHTML = "";
 
     scoresArr.forEach((element, index) => {
 
-        if(index == 0) {
+        if (index == 0) {
             scoreDiv.innerHTML += `
                 <div class="users-score">
                     <h4>${element.user}</h4>
@@ -71,7 +97,7 @@ function showPlayer() {
                 `
         }
 
-        if(index > 0) {
+        if (index > 0) {
             scoreDiv.innerHTML += `
             <div class="users-score">
                 <h4>${element.user}</h4>

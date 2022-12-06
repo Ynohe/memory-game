@@ -34,6 +34,8 @@ function disableCards(){
     console.log(finish);
     if (finish === 8){  
         winwin.showModal()
+
+        finishTime();
     }
 }
 
