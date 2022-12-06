@@ -110,8 +110,9 @@
                 <img class="card-face front-image" src="./assets/images/Seven.png" alt="">
                 <img class="card-face back-image flip-back" src="./assets/images/chip.png" alt="back-card">
             </div>
-
-            <dialog id="modal" class="modal">
+        </section>
+        <section class="modal" id="usernameModal">
+            <div class="modal-container">
                 <form id="userForm" class="card-username" method="dialog">
                     <h1 class="card__title">User</h1>
                     <p class="card__content">Please enter your username</p>
@@ -120,13 +121,17 @@
                         <button id="seconds" class="sign-up" type="submit"> Sign up</button>
                     </div>
                 </form>
-            </dialog>
-            <dialog id="winwin">
+            </div>
+        </section>
+        <section class="modal" id="winnerModal">
+            <div class="modal-container" id="winPopup">
                 <h2>You are a winner!</h2>
                 <img src="./assets/images/champion.png" alt="">
-                <button class="win-button" id="winButton" onclick="startGame()">Play again</button>
-            </dialog>
+                <button id="playAgainButton" class="win-button">Play again</button>
+                <span class="span-close" id="spanClose">X</span>
+            </div>
         </section>
+
         <aside class="score-section" id="scoreSection">
             <h3>User scores</h3>
             <div id="scoresDiv" class="scores-div">

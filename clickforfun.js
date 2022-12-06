@@ -1,12 +1,11 @@
-let card = document.querySelectorAll(".card");
-let hasFlippedCard= false;
+const card = document.querySelectorAll(".card");
+let hasFlippedCard = false;
 let lockBoard = false;
 let firstCard, secondCard;
 let finish = 0;
-let winwin = document.getElementById("winwin");
-const playAgainButton = document.getElementById("winButton");
-
-console.log(playAgainButton);
+const winnerModal = document.getElementById("winnerModal");
+const winPopup = document.getElementById("winPopup");
+const allImages = document.querySelectorAll(".card-face");
 
 function flipCard(){
     if (lockBoard) return;
@@ -31,19 +30,26 @@ function checkForMatch(){
 }
 
 function disableCards(){
+    
     firstCard.removeEventListener("click", flipCard);
     secondCard.removeEventListener("click", flipCard);
     finish++
     console.log(finish);
-    if (finish === 8){  
+    if (finish === 8){ 
         finishTime();
-        winwin.showModal()
-        winwin.innerHTML += `
+        winnerModal.classList.add("modal--show");
+        winPopup.innerHTML += `
             <p>Your time is ${x} seconds</p>
         `
         scoresArr[0].time = x;
-        localStorage.setItem("userScores", JSON.stringify(scoresArr))
+        localStorage.setItem("userScores", JSON.stringify(scoresArr));
+        finish = 0;
+
+        allImages.forEach(item => {
+            item.removeAttribute("style");
+        })
     }
+
 }
 
 function unflipCards(){
@@ -55,9 +61,21 @@ function unflipCards(){
     }, 1500);
 }
 
-card.forEach(cards => cards.addEventListener("click", flipCard));
+winnerModal.addEventListener("click", (e) => {
+    if(e.target.matches("#playAgainButton")) {
+        
+        winnerModal.classList.remove("modal--show");
+        winPopup.lastElementChild.remove();
 
+        startGame();
+        
+    };
 
-playAgainButton.addEventListener("click", () => console.log("hola"));
+    if(e.target.matches("#spanClose")) {
+        winnerModal.classList.remove("modal--show");
+        winPopup.lastElementChild.remove();
 
+        showScores();
+    };
+})
 

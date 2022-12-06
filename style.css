@@ -418,27 +418,44 @@ color: #333;
 }
 
 .modal {
-    border-radius: 20px;
-    border: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: rgba(0, 0, 0, 0.6);
+    display: flex;
+    opacity: 0;
+    pointer-events: none;
+    transition: opacity .6s;
+}
+
+.modal--show {
+    opacity: 1;
+    pointer-events: unset;
+    transition: opacity .6s;
+}
+
+.modal-container {
     margin: auto;
 }
 
-.modal::backdrop {
-    background: rgba(0, 0, 0, 0.6);
-}
-
-#winwin{
-    margin: auto;
+#winPopup{
+    position: relative;
     width: 250px;
     border-radius: 15px;
-    border: none;
     padding: 11px;
     text-align: center;
+    background: rgb(255, 255, 255);
 }
 
-#winwin::backdrop{
-    background: rgba(0, 0, 0, 0.6);
-}
-#winwin img{
+#winPopup img{
     width: 100%;
+}
+
+#winPopup .span-close{
+    position: absolute;
+    top: 10px;
+    right: 12px;
+    cursor: pointer;
 }

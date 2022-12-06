@@ -1,4 +1,4 @@
-const modal = document.getElementById("modal");
+const userModal = document.getElementById("usernameModal");
 const gameSection = document.getElementById("gameSection");
 const scoreDiv = document.getElementById("scoresDiv");
 const userForm = document.getElementById("userForm");
@@ -7,15 +7,19 @@ let ids = 0;
 
 let localStoreData = [];
 
-if (localStorage.getItem("userScores")) {
-    localStoreData = JSON.parse(localStorage.getItem("userScores"));
-} else {
-    localStorage.setItem("userScores", JSON.stringify(localStoreData));
-};
-
-const scoresArr = [...localStoreData];
+let scoresArr;
 
 function showScores() {
+    scoreDiv.innerHTML = "";
+
+    if (localStorage.getItem("userScores")) {
+        localStoreData = JSON.parse(localStorage.getItem("userScores"));
+    } else {
+        localStorage.setItem("userScores", JSON.stringify(localStoreData));
+    };
+
+    scoresArr = [...localStoreData]
+    
     scoresArr.forEach(item => {
         scoreDiv.innerHTML += `
                     <div class="users-score">
@@ -40,13 +44,19 @@ class Scores {
 playButton.addEventListener("click", startGame);
 
 function startGame() {
-    winwin.close();
-    modal.showModal();
+    card.forEach(item => {
+        item.classList.remove("flip");
+    })
+    userModal.classList.add("modal--show");
 };
 
 userForm.addEventListener("submit", takeUsername);
 
 function takeUsername(event) {
+    event.preventDefault();
+
+    userModal.classList.remove("modal--show");
+
     ids++
     let username = document.getElementById("username");
 
@@ -81,6 +91,8 @@ function finishTime(){
         clearInterval(timer);
 
         x = timeSpendPlaying + ',' + milisecondsSpend;
+        milisecondsSpend = 0;
+        timeSpendPlaying = 0;
 }
 
 function showPlayer() {
@@ -90,7 +102,7 @@ function showPlayer() {
 
         if (index == 0) {
             scoreDiv.innerHTML += `
-                <div class="users-score">
+                <div class="users-score" style="color:red">
                     <h4>${element.user}</h4>
                     <p>Now playing</p>
                 </div>
@@ -107,6 +119,3 @@ function showPlayer() {
         }
     });
 };
-
-
-
