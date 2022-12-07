@@ -4,6 +4,7 @@ let lockBoard = false;
 let firstCard, secondCard;
 let finish = 0;
 const winnerModal = document.getElementById("winnerModal");
+const loserModal = document.getElementById("loserModal");
 const winPopup = document.getElementById("winPopup");
 const allImages = document.querySelectorAll(".card-face");
 
@@ -25,6 +26,13 @@ function checkForMatch() {
     if (firstCard.dataset.framework === secondCard.dataset.framework) {
         disableCards();
         return;
+    }else if(hardMode === true){
+        if (firstCard.dataset.framework === secondCard.dataset.framework) {
+            disableCards();
+        }else{
+            finish = 8;
+            disableCards();
+        }
     }
     unflipCards();
 }
@@ -34,7 +42,6 @@ function disableCards() {
     firstCard.removeEventListener("click", flipCard);
     secondCard.removeEventListener("click", flipCard);
     finish++
-    console.log(finish);
     if (finish === 8) {
         finishTime();
         winnerModal.classList.add("modal--show");
@@ -48,6 +55,16 @@ function disableCards() {
         allImages.forEach(item => {
             item.removeAttribute("style");
         })
+    }else if(finish === 9){
+      finishTime();
+
+      loserModal.classList.add("modal--show");
+
+      finish = 0;
+
+      allImages.forEach(item => {
+          item.removeAttribute("style");
+      })
     }
 
 }
@@ -73,6 +90,24 @@ winnerModal.addEventListener("click", (e) => {
 
     if (e.target.matches("#spanClose")) {
         winnerModal.classList.remove("modal--show");
+        winPopup.lastElementChild.remove();
+
+        showScores();
+    };
+})
+
+loserModal.addEventListener("click", (e) => {
+    if (e.target.matches("#playAgainButton")) {
+
+        loserModal.classList.remove("modal--show");
+        winPopup.lastElementChild.remove();
+
+        startGame();
+
+    };
+
+    if (e.target.matches("#spanClose")) {
+        loserModal.classList.remove("modal--show");
         winPopup.lastElementChild.remove();
 
         showScores();

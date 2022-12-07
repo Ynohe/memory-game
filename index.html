@@ -14,10 +14,21 @@
 <body>
     <header class="header">
         <h2>Memory Game</h2>
-        <div>
-            <button id="playButton" class="play-button">
-                P L A Y
-                <div id="clip">
+        <div id="playButton">
+            <button class="play-button">
+                E A S Y
+                <div id="clip" class="easyMode">
+                    <div id="leftTop" class="corner"></div>
+                    <div id="rightBottom" class="corner"></div>
+                    <div id="rightTop" class="corner"></div>
+                    <div id="leftBottom" class="corner"></div>
+                </div>
+                <span id="rightArrow" class="arrow"></span>
+                <span id="leftArrow" class="arrow"></span>
+            </button>
+            <button  class="play-button">
+                H A R D
+                <div id="clip" class="hardMode">
                     <div id="leftTop" class="corner"></div>
                     <div id="rightBottom" class="corner"></div>
                     <div id="rightTop" class="corner"></div>
@@ -131,7 +142,15 @@
         <section class="modal" id="winnerModal">
             <div class="modal-container" id="winPopup">
                 <h2>You are a winner!</h2>
-                <img src="./assets/images/champion.png" alt="">
+                <img src="./assets/images/champion.png" alt="cup">
+                <button id="playAgainButton" class="win-button">Play again</button>
+                <span class="span-close" id="spanClose">X</span>
+            </div>
+        </section>
+        <section class="modal" id="loserModal">
+            <div class="modal-container" id="winPopup">
+                <h2>You are a LOSER!</h2>
+                <img src="./assets/images/gameover.png" alt="game over">
                 <button id="playAgainButton" class="win-button">Play again</button>
                 <span class="span-close" id="spanClose">X</span>
             </div>

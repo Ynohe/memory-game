@@ -9,6 +9,8 @@ let localStoreData = [];
 
 let scoresArr;
 
+let hardMode;
+
 function showScores() {
     scoreDiv.innerHTML = "";
 
@@ -43,11 +45,17 @@ class Scores {
 
 playButton.addEventListener("click", startGame);
 
-function startGame() {
+function startGame(event) {
     card.forEach(item => {
         item.classList.remove("flip");
     })
     userModal.classList.add("modal--show");
+
+    if(event.target.matches('.easyMode')){
+    hardMode = false;
+    }else if(event.target.matches('.hardMode')){
+        hardMode = true;
+    }
 
     shuffle();
 };
@@ -85,7 +93,6 @@ function timeCount() {
             milisecondsSpend = 0;
             timeSpendPlaying += 1;
         }
-        console.log(timeSpendPlaying + ',' + milisecondsSpend)
     }, counterMiliseconds)
 }
 
