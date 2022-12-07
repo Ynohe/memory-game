@@ -7,35 +7,35 @@ const winnerModal = document.getElementById("winnerModal");
 const winPopup = document.getElementById("winPopup");
 const allImages = document.querySelectorAll(".card-face");
 
-function flipCard(){
+function flipCard() {
     if (lockBoard) return;
     this.classList.add("flip");
-    if(!hasFlippedCard){
+    if (!hasFlippedCard) {
         hasFlippedCard = true;
         firstCard = this;
         return;
     }
-    secondCard= this;
-    hasFlippedCard= false;
-    
+    secondCard = this;
+    hasFlippedCard = false;
+
     checkForMatch();
 }
 
-function checkForMatch(){
-    if(firstCard.dataset.framework === secondCard.dataset.framework){
+function checkForMatch() {
+    if (firstCard.dataset.framework === secondCard.dataset.framework) {
         disableCards();
         return;
     }
     unflipCards();
 }
 
-function disableCards(){
-    
+function disableCards() {
+
     firstCard.removeEventListener("click", flipCard);
     secondCard.removeEventListener("click", flipCard);
     finish++
     console.log(finish);
-    if (finish === 8){ 
+    if (finish === 8) {
         finishTime();
         winnerModal.classList.add("modal--show");
         winPopup.innerHTML += `
@@ -52,9 +52,9 @@ function disableCards(){
 
 }
 
-function unflipCards(){
+function unflipCards() {
     lockBoard = true;
-    setTimeout(() =>{
+    setTimeout(() => {
         firstCard.classList.remove("flip");
         secondCard.classList.remove("flip");
         lockBoard = false;
@@ -62,16 +62,16 @@ function unflipCards(){
 }
 
 winnerModal.addEventListener("click", (e) => {
-    if(e.target.matches("#playAgainButton")) {
-        
+    if (e.target.matches("#playAgainButton")) {
+
         winnerModal.classList.remove("modal--show");
         winPopup.lastElementChild.remove();
 
         startGame();
-        
+
     };
 
-    if(e.target.matches("#spanClose")) {
+    if (e.target.matches("#spanClose")) {
         winnerModal.classList.remove("modal--show");
         winPopup.lastElementChild.remove();
 
@@ -79,3 +79,9 @@ winnerModal.addEventListener("click", (e) => {
     };
 })
 
+function shuffle() {
+    card.forEach(cards => {
+      let ramdomPos = Math.floor(Math.random() * 16);
+      cards.style.order = ramdomPos;
+    });
+  }

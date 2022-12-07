@@ -48,6 +48,8 @@ function startGame() {
         item.classList.remove("flip");
     })
     userModal.classList.add("modal--show");
+
+    shuffle();
 };
 
 userForm.addEventListener("submit", takeUsername);
