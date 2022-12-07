@@ -218,7 +218,7 @@ to {
     border: 2px solid black;
     padding: 15px;
     border-radius: 10px;
-    column-gap: 10px;
+    justify-items: center;
     background-image: url(./assets/wallpaper/gold-background.jpg);
     background-size: cover;
 }
@@ -456,4 +456,20 @@ color: #333;
     padding: 0.68em;
     border-radius: 14px;
     font-weight: bold; 
+}
+
+.github{
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 60px;
+    background: #fff;
+    clip-path: polygon(100% 0, 0 100%, 0 0);
+    height: 60px;
+}
+
+.github img{
+    max-width: 70%;
+    display: block;
+    margin-top: 10%;
 }
