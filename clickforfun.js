@@ -100,7 +100,6 @@ loserModal.addEventListener("click", (e) => {
     if (e.target.matches("#playAgainButton")) {
 
         loserModal.classList.remove("modal--show");
-        winPopup.lastElementChild.remove();
 
         startGame();
 
@@ -108,7 +107,6 @@ loserModal.addEventListener("click", (e) => {
 
     if (e.target.matches("#spanClose")) {
         loserModal.classList.remove("modal--show");
-        winPopup.lastElementChild.remove();
 
         showScores();
     };
